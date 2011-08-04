@@ -1,6 +1,8 @@
 Documentation
 *************
 
+Test
+
 Install Sphinx
 ==============
 
