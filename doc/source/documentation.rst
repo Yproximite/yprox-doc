@@ -26,7 +26,7 @@ With the following contents::
     Hello World
     ===========
 
-Save the document and modify `index.rst.template` by adding your new file::
+Save the document and modify `index.rst` by adding your new file::
 
      .. yProx documentation master file, created by
     sphinx-quickstart on Sun Dec 26 13:34:06 2010.
@@ -47,7 +47,6 @@ Save the document and modify `index.rst.template` by adding your new file::
        terms
        testing
        mynewpage
-    %YLLY_INDEX%
 
     Indices and tables
     ==================
@@ -55,11 +54,6 @@ Save the document and modify `index.rst.template` by adding your new file::
     * :ref:`genindex`
     * :ref:`modindex`
     * :ref:`search`
-
-.. note::
-
-    Do not modify the `index.rst` file directly, as we generate this file based on the template above. This
-    is necessary to enable us to include the documentation for all the extensions.
 
 Building the documentation
 ==========================
