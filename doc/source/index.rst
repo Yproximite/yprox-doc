@@ -9,27 +9,13 @@ Welcome to yProx's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :numbered:
 
    introduction
-   maintainance
-   git
-   testing
-   deploying
-   documentation
-   sitebundles
-   YllyBackOfficeBundle <extensions/YllyBackOfficeBundle/index>
-   SiteCustomerBundle <extensions/SiteCustomerBundle/index>
-   SiteNavigationBundle <extensions/SiteNavigationBundle/index>
-   ArticleBundle <extensions/ArticleBundle/index>
-   YllyTranslationBundle <extensions/YllyTranslationBundle/index>
-   YllySignupBundle <extensions/YllySignupBundle/index>
-   NavigationBundle <extensions/NavigationBundle/index>
-   InheritDataBundle <extensions/InheritDataBundle/index>
-   CmsBundle <extensions/CmsBundle/index>
-
-
+   howto/index
+   cookbook/index
+   extensions/index
 
 Indices and tables
 ==================
