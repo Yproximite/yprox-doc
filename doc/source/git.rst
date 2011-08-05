@@ -99,3 +99,49 @@ To do this checkout your master branch and **pull** from **ylly/master** as foll
     git pull ylly master
 
 Note that you should have added the **ylly** origin as described earlier in this chapter.
+
+Emergency Fixes - Creating a patch for the production server
+============================================================
+
+In the case that a bug needs to be fixed immediately (it cannot wait until the next release) you
+can create a patch and apply it to the production server without deploying again.
+
+1. Create ticket, branch and commit as detailed in previous section.
+
+2. Create the patch
+
+   1. As previously mentioned, your `master` branch should be the same as the master branch on
+      `ylly/master`. Make sure this is the case.
+
+   2. Create the patch, the following will create a file in the current directory, the filename will be generated from your commit message. Be sure to your commit message is formatted as previously mentioned for best results::
+
+    git patch master
+
+   3. Copy the patch to the production server::
+
+    scp 0001-Issue-XXX-This-file-is-generated-by-git.patch
+    
+   4. Login to the production server, and change user to `yproxbuild` as previously detailed::
+
+    ssh me@plombierweb.fr -p65022
+    sudo -i
+    su yproxbuild
+
+   5. cd to the production `YProx` directory::
+
+    cd /var/www/p/YProx/current
+
+   6. Review changes in the patch::
+
+    git apply --stat /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
+
+   7. Check that the patch can apply cleanly::
+
+    git apply --check /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
+
+   8. If there is no output the patch will apply, if there are errors it will not. If you are good::
+
+    git apply /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
+
+   9. Your are done.
+
