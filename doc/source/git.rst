@@ -23,7 +23,7 @@ To clone locally::
 
 And now add a new origin for the `Ylly` master repository::
 
-    git add origin ylly github.com:ylly/yProx
+    git remote add ylly git@github.com:ylly/yProx.git
 
 This is required for pulling changes from the main repository back
 to your local repository.
@@ -50,7 +50,7 @@ You should work on each Issue in isolation from anyother changes to the code bas
 
         git add foobar
 
-    3. Commit your changes
+    3. Commit your changes::
 
         git commit
 
@@ -61,7 +61,7 @@ You should work on each Issue in isolation from anyother changes to the code bas
         - Ozone layer now works properly, bug with C02 emissions.
         - Added class to handle doomsday scenario.
         
-    5. Push the change to your account on *GITHub*
+    5. Push the change to your account on *GITHub*::
 
         git push origin issue-1183
 
@@ -119,29 +119,29 @@ can create a patch and apply it to the production server without deploying again
 
    3. Copy the patch to the production server::
 
-    scp 0001-Issue-XXX-This-file-is-generated-by-git.patch
+        scp 0001-Issue-XXX-This-file-is-generated-by-git.patch
     
    4. Login to the production server, and change user to `yproxbuild` as previously detailed::
 
-    ssh me@plombierweb.fr -p65022
-    sudo -i
-    su yproxbuild
+        ssh me@plombierweb.fr -p65022
+        sudo -i
+        su yproxbuild
 
    5. cd to the production `YProx` directory::
 
-    cd /var/www/p/YProx/current
+        cd /var/www/p/YProx/current
 
    6. Review changes in the patch::
 
-    git apply --stat /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
+        git apply --stat /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
 
    7. Check that the patch can apply cleanly::
 
-    git apply --check /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
+        git apply --check /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
 
    8. If there is no output the patch will apply, if there are errors it will not. If you are good::
 
-    git apply /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
+        git apply /home/me/0001-Issue-XXX-This-file-is-generated-by-git.patch
 
    9. Your are done.
 
