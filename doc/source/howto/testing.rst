@@ -3,6 +3,35 @@ Testing
 
 All automated tests are written for **PHPUnit** version **3.5+**.
 
+Install PHPUnit
+===============
+
+Install PHPUnit by using PEAR::
+
+    pear channel-update pear.php.net
+    pear upgrade-all
+
+    pear channel-discover pear.phpunit.de
+    pear channel-discover components.ez.no
+    pear channel-discover pear.symfony-project.com
+
+    pear install phpunit/PHPUnit
+
+Run the tests::
+
+    phpunit -c config/
+
+and you should see something like the following::
+
+    PHPUnit 3.5.6 by Sebastian Bergmann.
+
+    ............................................................ 60 / 74
+    ..............
+
+    Time: 4 seconds, Memory: 19.25Mb
+
+    OK (74 tests, 236 assertions)
+
 Selenium Tests
 ==============
 

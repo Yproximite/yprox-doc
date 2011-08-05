@@ -1,4 +1,4 @@
-Maintainance
+Installation
 ************
 
 Install Packages for Debian / Ubuntu
@@ -12,12 +12,7 @@ Install Packages for Debian / Ubuntu
 Checking out from github
 ========================
 
-The project is hosted on *guthub*::
-
-    git clone git@github.com:ylly/yProx.git
-    cd yProx
-    git submodule init
-    git submodule update
+See :doc:`git` for more details
 
 Building and configuration
 ==========================
@@ -83,33 +78,3 @@ execute::
 To build the dev version and also perform git updates::
 
     php apps/admin/console yprox:build devGit
-
-
-Install PHPUnit
-===============
-
-Install PHPUnit by using PEAR::
-
-    pear channel-update pear.php.net
-    pear upgrade-all
-
-    pear channel-discover pear.phpunit.de
-    pear channel-discover components.ez.no
-    pear channel-discover pear.symfony-project.com
-
-    pear install phpunit/PHPUnit
-
-Run the tests::
-
-    phpunit -c config/
-
-and you should see something like the following::
-
-    PHPUnit 3.5.6 by Sebastian Bergmann.
-
-    ............................................................ 60 / 74
-    ..............
-
-    Time: 4 seconds, Memory: 19.25Mb
-
-    OK (74 tests, 236 assertions)

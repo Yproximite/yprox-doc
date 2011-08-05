@@ -28,7 +28,7 @@ Login the the staging server::
 
 `sudo` to the root user::
 
-    sudo -i me
+    sudo -i 
 
 `su` to the `yproxbuild` user::
 
@@ -49,12 +49,22 @@ Now `cd` to the staging `yProx` directory::
 Export the site
 ---------------
 
-To export a site to a site bundle::
+To export a site to a site bundle and so export all templates, images and database entries::
 
     php apps/admin/console yprox:site:export fleuriste FleuristeSiteBundle
 
 Where *fleuriste* is the `_importRef` of the site and *FleuristeSiteBundle* is the name of the bundle
 to export the data to.
+
+Export the site and rename the templates
+----------------------------------------
+
+If you are exporting a site that was duplicated from another site. The template names will still reference
+the original site. The exporter **will not overwrite templates belonging to another bundle**.
+
+To export the duplicated templates it is necessary to use the `--rewrite-template-bundle` options as follows::
+
+    php apps/admin/console yprox:site:export fleuriste FleuristeSiteBundle --rewrite-template-bundle=BienEtreSiteBundle
 
 Creating a new bundle and adding a bundle to git
 ================================================
