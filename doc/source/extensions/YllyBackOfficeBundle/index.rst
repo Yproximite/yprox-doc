@@ -177,17 +177,15 @@ The button macro is automatically included in the master layout and provides two
     All *path* parameters should be provided by the SF2 ``path`` function, e.g. 
     ``button.create(path('my_route', {'param1': 'value1'}), 'My Label')``.
 
-button.create(path, label)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. function:: button.create(path, label)
 
-Creates a graphical *anchor link* button with a create icon and the given label::
+    Creates a graphical *anchor link* button with a create icon and the given label.
 
-button.submit_save(label)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. function:: button.submit_save(label)
 
-Creates a graphical *form submit* button with an image with the text "Savguarder". The
-text will probably be changed to be dynamic so always supply a label even if it doesnt get used
-at the moment.
+    Creates a graphical *form submit* button with an image with the text "Savguarder". The
+    text will probably be changed to be dynamic so always supply a label even if it doesnt get used
+    at the moment.
 
 formLink macro
 --------------
@@ -203,13 +201,11 @@ a common way to render the links common to all forms. And should be defined in t
         {{ formLink.delete(path("foo")) }}
     {% endblock %}
 
-formLink.return(path)
-~~~~~~~~~~~~~~~~~~~~~
+.. function:: formLink.return(path)
 
-Renders a return link, i.e. return to previous page. *path* is the previous page.
+    Renders a return link, i.e. return to previous page. *path* is the previous page.
 
-formLink.delete(path)
-~~~~~~~~~~~~~~~~~~~~~
+.. function:: formLink.delete(path)
 
-Renders a delete link, when the link is clicked the user is asked for confirmation, if
-confirmed the browser will request the specified *path*.
+    Renders a delete link, when the link is clicked the user is asked for confirmation, if
+    confirmed the browser will request the specified *path*.

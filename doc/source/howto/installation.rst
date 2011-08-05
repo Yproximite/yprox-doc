@@ -6,13 +6,12 @@ Install Packages for Debian / Ubuntu
 
 .. code-block:: bash
 
-    apt-get install apache2 php5 php5-cli php5-gd php5-imagick mysql-server backup-manager ia32-libs postfix php-pear php5-gd php5-imagick git-core php5-intl phpmyadmin php5-sqlite
-
+    apt-get install apache2 php5 php5-cli php5-gd mysql-server backup-manager ia32-libs postfix php-pear php5-gd git-core php5-intl phpmyadmin php5-sqlite
 
 Checking out from github
 ========================
 
-See :doc:`git` for more details
+See :doc:`git`
 
 Building and configuration
 ==========================
@@ -78,3 +77,37 @@ execute::
 To build the dev version and also perform git updates::
 
     php apps/admin/console yprox:build devGit
+
+Enable APC cache
+================
+
+**Doctrine** caches metadata. By default it regenerates the cache for each request, which is sometimes usefull for development.
+But this method is **very slow**. To greatly improve the speed of the application you should enable the APC cache (or *XCache* or
+*memcache*, but I will explain *APC*).
+
+1. Install from Debian / Ubuntu::
+
+    apt-get install php-apc
+
+2. Enable in your `config/environment_config.yml` file::
+
+    doctrine:
+        dbal:
+            default_connection: default
+            connections:
+                default:
+                    dbname: yprox
+                    user: root
+                    password: 
+
+        orm:
+           entity_managers:
+                default:
+                    metadata_cache_driver: apc
+                    query_cache_driver: apc
+
+.. note::
+
+    APC is enabled on both production and staging.
+
+**Problems??** When using APC you will **need to restart the Apache web server each time you modify the schema**.

@@ -59,12 +59,21 @@ to export the data to.
 Export the site and rename the templates
 ----------------------------------------
 
+You have a problem. **There are no templates in the exported bundle**.
+
 If you are exporting a site that was duplicated from another site. The template names will still reference
 the original site. The exporter **will not overwrite templates belonging to another bundle**.
 
 To export the duplicated templates it is necessary to use the `--rewrite-template-bundle` options as follows::
 
-    php apps/admin/console yprox:site:export fleuriste FleuristeSiteBundle --rewrite-template-bundle=BienEtreSiteBundle
+    php apps/admin/console yprox:site:export fleuriste FleuristeSiteBundle --rewrite-template-bundle=??
+
+If you do not know what to write as the argument for `--rewrite-template-bundle` then run the command without this option
+and pay attention to the output near the top which may read something like::
+
+    Not writing template "BienEtreSiteBundle::layoutBienEtre2.html.twig" to foreign Bundle "BienEtreSiteBundle".
+
+So in this case it is **BienEtreSiteBundle** which needs to be added but you can ignore any references to **CmsBundle**.
 
 Creating a new bundle and adding a bundle to git
 ================================================
