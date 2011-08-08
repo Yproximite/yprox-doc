@@ -34,11 +34,15 @@ Working on tickets -- branching and commit formatting
 You should work on each Issue in isolation from anyother changes to the code base.
 
 1. Which issue are you working on? *Issue 1183*? Good.
-2. Checkout the master branch
+2. Checkout the master branch::
+
+    git checkout master
+
 3. Ensure that the master branch is in the last *stable* state.
-4. Create a branch for *Issue 1183*::
+4. Create a branch for *Issue 1183* and checkout the branch::
 
     git branch issue-1183
+    git checkout issue-1183
 
 5. Do the work required by *Issue 1183*.
 6. Commit your changes
@@ -115,7 +119,7 @@ can create a patch and apply it to the production server without deploying again
 
    2. Create the patch, the following will create a file in the current directory, the filename will be generated from your commit message. Be sure to your commit message is formatted as previously mentioned for best results::
 
-    git patch master
+        git patch master
 
    3. Copy the patch to the production server::
 

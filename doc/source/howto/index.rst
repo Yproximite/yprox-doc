@@ -13,6 +13,7 @@ Contents:
 
    git
    installation
+   codingstandards
    deploying
    sitebundles
    testing

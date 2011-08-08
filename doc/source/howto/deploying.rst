@@ -78,7 +78,7 @@ Now delete any commits that are *quick fixes* and that are not *issues*.
 .. note::
 
     All commits should be descriptive, and all commits which solve Issues
-    should be be formatted correctly, see :doc:`/git` for information on 
+    should be be formatted correctly, see :doc:`git` for information on 
     how to correctly format your commit messages.
 
 Deploy

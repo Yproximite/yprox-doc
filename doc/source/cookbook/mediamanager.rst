@@ -19,7 +19,9 @@ So to add a scaled logo to a template..
 
 .. code-block:: jinja
 
-    <img src="{{ image_transform_url(site_manager.getSite.getLogo, 'Sh75') }}"/>
+    {% if site_manager.getSite.getLogo %}
+        <img src="{{ image_transform_url(site_manager.getSite.getLogo, 'Sh75') }}"/>
+    {% endif %}
 
 As you can see we add a standard `img` tag and we use the `image_transform_url` helper to
 generate the URL which will generate the transformed image. This example will **scale** the
@@ -28,6 +30,22 @@ site logo (as gotten by the `site_manager` helper) to a **height** of **75 pixel
 .. function:: image_transform_url(Media $media, $transformCommand)
 
     Provides a URL which can transform the image based on the given *transform command*.
+
+... or displaying a 16x16 favicon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A similar call can be made for a 16x16 facourite icon::
+
+    {% if site_manager.getSite.getLogo %}
+        <img src="{{ image_transform_url(site_manager.getSite.getFavicon, 'Sh16_w16') }}"/>
+    {% endif %}
+
+This will display the sites *favicon* (if it exists), forcibly scaling it to 16x16. Alternatively
+you can scale horizontally and crop the image by substituting the command with the following::
+
+    Sh16-Cx0_y0_h16_w16
+
+This will scale the image to a height of 16 maintaining the aspect ratio and then crop the image to 16x16.
 
 Transform Command
 -----------------
@@ -87,11 +105,11 @@ Rotate
 
 Command: `R`
 
-+-----------+--------------------------------+
-|Parameters | Description                    |
-+===========+================================+
-| a         | Angle to rotate                |
-+-----------+--------------------------------+
++------------+--------------------------------+
+| Parameters | Description                    |
++============+================================+
+| a          | Angle to rotate                |
++------------+--------------------------------+
 
 Example::
 
