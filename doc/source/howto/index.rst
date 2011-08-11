@@ -15,6 +15,8 @@ Contents:
    installation
    codingstandards
    deploying
+   monitoring
    sitebundles
    testing
    documentation
+   css

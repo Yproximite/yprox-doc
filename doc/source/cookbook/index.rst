@@ -13,3 +13,4 @@ Contents:
 
    sitebundles
    mediamanager
+   sendingemail

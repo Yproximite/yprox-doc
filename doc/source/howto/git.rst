@@ -149,3 +149,25 @@ can create a patch and apply it to the production server without deploying again
 
    9. Your are done.
 
+GIT Stash
+=========
+
+GIT Stash is a command that takes any unstaged changes in your working tree and "stashes" them until such a time that you need them again.
+
+This is most usefull when you are working on a branch but quickly need to switch to another branch to fix another issue but when you try and change branches GIT will not let you, because doing so would overwrite your unstaged changes but **you do not want to commit you current changes** because they are not finished. You can use `git stash` to put the changes to one side, switch branches, fix your other issue, then return to the other branch and restore the stashed changes.
+
+To use `git stash`. Run::
+
+    git stash
+    
+This will take any **unstaged** changes and "stash" them away, removing them from the current tree. You can then change branch and do what ever you want. When you are ready you can re-checkout the branch you were working on and run::
+
+    git stash pop
+
+This will add the changes you stashed earlier back into the current branch.
+
+Dont worry about losing changes, git stash acts like a PHP array, and you never overwrite a stash. All stashes are stored in sequence. List them with::
+
+    git stash list
+
+
