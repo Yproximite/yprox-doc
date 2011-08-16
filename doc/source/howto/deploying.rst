@@ -133,6 +133,17 @@ Now you can deploy to production, `cd` back to home and run the deploy script fo
 
 Et, voila. If you need to run the destructive SQL, do it now.
 
+Changing production configuration, adding new site bundles
+==========================================================
+
+If you need to change the prodiuction configuration the source files for the build are
+located in::
+
+    /home/yproxbuild/config
+
+To modify what is normally `environment_config.yml` edit `production_config.yml` and to
+modify the activated site bundles modify `site_bundles.ini`.
+
 Check that the sites work
 =========================
 
