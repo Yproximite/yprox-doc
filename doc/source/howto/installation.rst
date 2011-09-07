@@ -37,6 +37,12 @@ You also need to copy the example `site_bundles.ini.example` file to `site_bundl
 
 This file tells yProximite which site bundles to manage.
 
+Create a folder and checkout the TestSiteBundle ::
+
+    mkdir src/yProxSite
+    cd src/yProxSite
+    git clone git@github.com:ylly/TestSiteBundle
+
 Building the application (the build command)
 --------------------------------------------
 

@@ -28,6 +28,12 @@ And now add a new origin for the `Ylly` master repository::
 This is required for pulling changes from the main repository back
 to your local repository.
 
+Fetch submodule (Symfony source, etc.)::
+
+    git submodule init
+    git submodule update
+
+
 Working on tickets -- branching and commit formatting
 -----------------------------------------------------
 
