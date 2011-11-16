@@ -13,14 +13,15 @@ Install PHPUnit
 
 Install PHPUnit by using PEAR::
 
-    pear channel-update pear.php.net
-    pear upgrade-all
+    pear config-set auto_discover 1
+    pear install pear.phpunit.de/PHPUnit
 
-    pear channel-discover pear.phpunit.de
-    pear channel-discover components.ez.no
-    pear channel-discover pear.symfony-project.com
+Install the Selenium extension::
 
-    pear install phpunit/PHPUnit
+    # if you havn't the php5-curl extension ...
+    # apt-get install php5-curl
+
+    pear install phpunit/PHPUnit_Selenium
 
 Run the tests::
 
